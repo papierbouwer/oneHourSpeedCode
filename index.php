@@ -23,8 +23,11 @@ url: http://www.ns.nl/actuele-vertrektijden/avt?station=alm
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
     </head>
     <body>
-        <?php echo $doc->saveHTML();?>
-        <div id="wrapper">
+        <div class="text-center">
+          <small>Almere Centraal</small>
+        </div>
+        <div class="container">
+          
         </div>
     </body>
 </html>
