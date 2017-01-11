@@ -4,8 +4,27 @@
 
 $dataWebPage = file_get_contents('http://www.ns.nl/actuele-vertrektijden/avt?station=alm');
 
+<<<<<<< HEAD
+$dom = new DOMDocument();
+$dom->loadHTML($dataWebPage);
+
+$data = new ArrayObject();
+
+$divs = $dom->getElementsByTagName('div');
+foreach ($divs as $div) {
+    foreach ($div->attributes as $attr) {
+      $name = $attr->nodeName;
+      $value = $attr->nodeValue;
+      if($name == "class" && $value == "container"){
+        $data->append($div);
+      var_dump($div);}
+      echo "Attribute '$name' :: '$value'<br />";
+    }
+}
+=======
 $doc = new DOMDocument();
 $doc->loadHTML('<?xml encoding="UTF-8">' . $dataWebPage);
+>>>>>>> 87bb655fd3f53e4a849ea569dc83f9b8b5978417
 
 $doc = $doc->getElementById("id3");
 ?>
