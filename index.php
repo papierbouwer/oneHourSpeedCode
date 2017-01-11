@@ -27,7 +27,7 @@ url: http://www.ns.nl/actuele-vertrektijden/avt?station=alm
           <small>Almere Centraal</small>
         </div>
         <div class="container">
-          
+
         </div>
     </body>
 </html>
