@@ -4,6 +4,7 @@
 
 $dataWebPage = file_get_contents('http://www.ns.nl/actuele-vertrektijden/avt?station=alm');
 
+<<<<<<< HEAD
 $dom = new DOMDocument();
 $dom->loadHTML($dataWebPage);
 
@@ -20,7 +21,12 @@ foreach ($divs as $div) {
       echo "Attribute '$name' :: '$value'<br />";
     }
 }
+=======
+$doc = new DOMDocument();
+$doc->loadHTML('<?xml encoding="UTF-8">' . $dataWebPage);
+>>>>>>> 87bb655fd3f53e4a849ea569dc83f9b8b5978417
 
+$doc = $doc->getElementById("id3");
 ?>
 <!--
 
@@ -36,6 +42,11 @@ url: http://www.ns.nl/actuele-vertrektijden/avt?station=alm
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
     </head>
     <body>
-        <?php echo $dataWebPage;?>
+        <div class="text-center">
+          <small>Almere Centraal</small>
+        </div>
+        <div class="container">
+          
+        </div>
     </body>
 </html>
