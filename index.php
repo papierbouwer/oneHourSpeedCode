@@ -4,14 +4,19 @@
 
 $dataWebPage = file_get_contents('http://www.ns.nl/actuele-vertrektijden/avt?station=alm');
 
-$dom = DOMDocument();
-$dom.loadHTML($dataWebPage);
+$dom = new DOMDocument();
+$dom->loadHTML($dataWebPage);
+
+$data = new ArrayObject();
 
 $divs = $dom->getElementsByTagName('div');
 foreach ($divs as $div) {
     foreach ($div->attributes as $attr) {
       $name = $attr->nodeName;
       $value = $attr->nodeValue;
+      if($name == "class" && $value == "container"){
+        $data->append($div);
+      var_dump($div);}
       echo "Attribute '$name' :: '$value'<br />";
     }
 }
