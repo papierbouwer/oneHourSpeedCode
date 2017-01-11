@@ -24,5 +24,7 @@ url: http://www.ns.nl/actuele-vertrektijden/avt?station=alm
     </head>
     <body>
         <?php echo $doc->saveHTML();?>
+        <div id="wrapper">
+        </div>
     </body>
 </html>
