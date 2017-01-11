@@ -4,10 +4,18 @@
 
 $dataWebPage = file_get_contents('http://www.ns.nl/actuele-vertrektijden/avt?station=alm');
 
-$doc = new DOMDocument();
-$doc->loadHTML('<?xml encoding="UTF-8">' . $dataWebPage);
+$dom = DOMDocument();
+$dom.loadHTML($dataWebPage);
 
-$doc = $doc->getElementById("id3");
+$divs = $dom->getElementsByTagName('div');
+foreach ($divs as $div) {
+    foreach ($div->attributes as $attr) {
+      $name = $attr->nodeName;
+      $value = $attr->nodeValue;
+      echo "Attribute '$name' :: '$value'<br />";
+    }
+}
+
 ?>
 <!--
 
@@ -20,6 +28,6 @@ http://www.ns.nl/actuele-vertrektijden/avt?station=alm
         <title>Je fucking treintijden BITCH!</title>
     </head>
     <body>
-        <?php echo $doc->saveHTML();?>
+        <?php echo $dataWebPage;?>
     </body>
 </html>
