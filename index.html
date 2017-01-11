@@ -19,9 +19,9 @@
   <script>
     window.onload = function() {
       var url = 'http://www.ns.nl/actuele-vertrektijden/avt?station=alm',
-          x = new file(url),
-          page = x.get_page();
-          console.log(page);
+          x = new file('GET',url),
+          table = x.get_page();
+      console.log(table);
     };
   </script>
 </html>
